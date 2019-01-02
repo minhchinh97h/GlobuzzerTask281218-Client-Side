@@ -5,7 +5,7 @@ class Header extends Component{
 
     render(){
         return(
-            <div className="container">
+            <div className="header">
                 <div className="top-nav">
                     <div className="logo-brand-holder">
                         <a className="brand-display" href="#">Globuzzer</a>
