@@ -1,0 +1,83 @@
+/* top-nav classes */
+.top-nav{
+    height: 50px;
+    background-color: rgb(105,105,105);
+    display: flex;
+    width: 100%;
+}
+
+.top-nav a{
+    align-self: center;
+    text-decoration: none;
+    color: white;   
+}
+
+.top-nav .right-section{
+    width: 100%;
+    display:flex;
+}
+/* end of top-nav classes */
+
+
+/* logo-brand classes */
+.logo-brand-holder {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.brand-display{
+    font-size: 24px;
+    margin-left: 50px; 
+}
+/* end of logo-brand classes */
+
+
+/* right-section classes */
+.top-nav .right-section{
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+/* end of right-section classes */
+
+
+.home-selection-holder{
+    padding: 30px;
+}
+
+.home-display{
+}
+
+
+
+.services-selection-holder{
+    padding: 30px;
+}
+
+.services-display{
+
+}
+
+
+
+.my-package-selection-holder{
+    padding: 30px;
+}
+
+.my-package-display{
+
+}
+
+
+
+.currency-selection-holder{
+    padding: 30px;
+    margin-right: 20px;
+}
+
+.currency-selection-display{
+    background-color: transparent;
+    color: white;
+}
+
+

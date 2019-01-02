@@ -1,0 +1,85 @@
+footer .container{
+    display: flex;
+    width: 100%;
+}
+
+.bottom-nav{
+    display: flex;
+    width: 100%;
+}
+
+.left-section{
+    height: 100%;
+    width: 50%; 
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+}
+
+.left-section a {
+    text-decoration: none;
+    color: white;
+}
+
+.upper-left-section{
+    display: flex;
+    height: 50%;
+    align-items: center;
+}
+
+.home-nav-link {
+    display: inline-block;
+}
+
+.privacy-nav-link{
+    display: inline-block;
+    margin: auto 20px;
+}
+
+.terms-nav-link{
+    display: inline-block;
+}
+
+.contact-nav-link{
+    display: inline-block;
+    margin: auto 20px;
+}
+
+.beneath-left-section p{
+    display: flex;
+    height: 50%;
+    align-items: center;
+    margin: 0;
+}
+
+.copy-right{
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.copy-right p{
+    margin-left: 10px;
+}
+
+.right-section{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.right-section a i{
+    color: black;
+}
+
+.fb-holder{
+}
+
+.twitter-holder{
+    margin: auto 10px;
+}
+
+.linkedin-holder{
+    margin-right: 50px;
+}
