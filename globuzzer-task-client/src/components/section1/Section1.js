@@ -2,6 +2,12 @@ import React, { Component } from 'react'
 import Header from '../header/Header'
 import './Section1.css'
 
+let today = new Date(),
+    currentMonth = today.getMonth(),
+    currentYear = today.getFullYear()
+
+
+
 class Section1 extends Component{
     country_list = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas"
 	,"Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia Herzegovina","Botswana","Brazil","British Virgin Islands"
@@ -19,10 +25,13 @@ class Section1 extends Component{
 	,"Turkey","Turkmenistan","Turks Caicos","Uganda","Ukraine","United Arab Emirates","United Kingdom","United States","United States Minor Outlying Islands","Uruguay"
     ,"Uzbekistan","Venezuela","Vietnam","Virgin Islands (US)","Yemen","Zambia","Zimbabwe"];
 
+    months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
     state={
         render_country_options:null,
-        current_selected_country: 'Select a country'
+        current_selected_country: 'Select a country',
+        arrival_date_content: null,
+        departure_date_content: null
     }
 
     SelectCountry = (e) => {
@@ -33,22 +42,114 @@ class Section1 extends Component{
 
     ToggleCountryDropdown = () => {
         window.document.getElementById("country-dropdown-content").classList.toggle("show")
-        window.document.getElementById("select-country-dropdown").classList.toggle("select-country-dropdown-show")
+        window.document.getElementById("select-country-dropdown").classList.toggle("active")
+    }
+
+    ToggleArrivalDropdown = () => {
+        window.document.getElementById("arrival-dropdown-content").classList.toggle("show")
+        window.document.getElementById("arrival-date-dropdown").classList.toggle("active")
+    }
+
+    ToggleDepartureDropdown = () => {
+        window.document.getElementById("departure-dropdown-content").classList.toggle("show")
+        window.document.getElementById("departure-date-dropdown").classList.toggle("active")
+    }
+
+    isDescendant(parent, child) {
+        var node = child.parentNode;
+        while (node != null) {
+            if (node == parent) {
+                return true;
+            }
+            node = node.parentNode;
+        }
+        return false;
+   }
+
+   ShowMonthYear(tbId, monthYearId, month, year){
+        let firstDay = (new Date(year, month)).getDay()
+        let daysInMonth = 32 - (new Date(year,month, 32)).getDate()
+
+        let tb = document.getElementById(tbId) //tbody of arrival previous month
+        
+        //clearing all the data
+        tb.innerHTML = ""
+
+        let monthYear = document.getElementById(monthYearId)
+        monthYear.innerHTML = this.months[month] + " " + year
+
+        //initialize cells
+        let date = 1;
+        for(let r = 0; r < 6; r++){
+            let row = document.createElement("tr")
+
+            for(let c = 0; c < 7; c++){
+                if(r === 0 && c < firstDay){
+                    let cell = document.createElement("td")
+                    let cellText = document.createTextNode("")
+                    cell.appendChild(cellText)
+                    row.appendChild(cell)
+                }
+
+                else if(date > daysInMonth){
+                    break
+                }
+
+                else{
+                    let cell = document.createElement("td")
+                    let cellText = document.createTextNode(date)
+
+                    if(date === today.getDate() && year === today.getFullYear() && month === today.getMonth()){
+
+                    }
+
+                    cell.appendChild(cellText)
+                    row.appendChild(cell)
+                    date++
+                }
+            }
+
+            tb.appendChild(row)
+        }
     }
 
     componentDidMount(){
         window.onclick = (e) => {
             if(!e.target.matches('.select-country-dropdown')){
-                let dropdown = document.getElementById("country-dropdown-content")
+                let countryDropdown = document.getElementById("country-dropdown-content")
+                if(countryDropdown.classList.contains('show')){
+                    document.getElementById("select-country-dropdown").classList.remove("active")
+                    countryDropdown.classList.remove('show')
+                } 
+            }
 
-                if(dropdown.classList.contains('show')){
-                    document.getElementById("select-country-dropdown").classList.remove("select-country-dropdown-show")
-                    dropdown.classList.remove('show')
+            if(e.target !== document.getElementById("arrival-date-dropdown")
+            && !this.isDescendant(document.getElementById("arrival-dropdown-content"), e.target)){
+                let arrivalDropdown = document.getElementById("arrival-dropdown-content")
+                if(arrivalDropdown.classList.contains('show')){
+                    arrivalDropdown.classList.remove('show')
                 }
-                    
+                
+                if(window.document.getElementById("arrival-date-dropdown").classList.contains('active')){
+                    window.document.getElementById("arrival-date-dropdown").classList.remove('active')
+                }
+            }
+
+            if(e.target !== document.getElementById("departure-date-dropdown")
+            && !this.isDescendant(document.getElementById("departure-dropdown-content"), e.target)){
+                let departureDropdown = document.getElementById("departure-dropdown-content")
+                if(departureDropdown.classList.contains('show')){
+                    departureDropdown.classList.remove('show')
+                }
+                
+                if(window.document.getElementById("departure-date-dropdown").classList.contains('active')){
+                    window.document.getElementById("departure-date-dropdown").classList.remove('active')
+                }
             }
         }
 
+
+        //initialize countries
         this.setState({
             render_country_options: this.country_list.map((country, index) =>{
                 return(
@@ -56,7 +157,30 @@ class Section1 extends Component{
                 )
             })
         })
+
+
+        //initialize arrival date
+        let previous = new Date()
+        previous.setDate(1)
+        previous.setMonth(previous.getMonth() - 1)
+
+        let previousYear = previous.getFullYear(),
+            previousMonth = previous.getMonth()
+
+
+        this.ShowMonthYear("arrival-previous-month", "a-previous-month-year", previousMonth, previousYear)
+        this.ShowMonthYear("arrival-current-month", "a-current-month-year", currentMonth,currentYear)
+
+        //initialize departure date
+        let next = new Date()
+        next.setDate(1)
+        next.setMonth(next.getMonth() + 1)
+
+        this.ShowMonthYear("departure-current-month", "d-current-month-year", currentMonth, currentYear)
+        this.ShowMonthYear("departure-next-month", "d-next-month-year", next.getMonth(), next.getFullYear())
     }
+
+    
 
     render(){
         return(
@@ -87,15 +211,163 @@ class Section1 extends Component{
                                         </div>
                                     </div>
 
-                                    <div>
-                                        <div>
-                                            Select a date
+                                    <div className="select-arrival-departure-date-holder">
+                                        <div className="arrival-date-holder">
+                                            <a id="arrival-date-dropdown" className="arrival-date-dropdown"
+                                            onClick={this.ToggleArrivalDropdown}>
+                                                Select a date
+                                            </a>
+                                            <div id="arrival-dropdown-content" className="arrival-dropdown-content"
+                                            >
+                                                <div className="content-holder">
+                                                    <div className="previous-month">
+                                                        <h3 id="a-previous-month-year">
+                                                        </h3>
+                                                        <table>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>
+                                                                        Su
+                                                                    </th>
+                                                                    <th>
+                                                                        Mo
+                                                                    </th>
+                                                                    <th>
+                                                                        Tu
+                                                                    </th>
+                                                                    <th>
+                                                                        We
+                                                                    </th>
+                                                                    <th>
+                                                                        Th
+                                                                    </th>
+                                                                    <th>
+                                                                        Fr
+                                                                    </th>
+                                                                    <th>
+                                                                        Sa
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="arrival-previous-month">
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                    <div className="current-month">
+                                                        <h3 id="a-current-month-year">
+                                                        </h3>
+                                                        <table>
+                                                            <thead>
+                                                                <tr>
+                                                                    <th>
+                                                                        Su
+                                                                    </th>
+                                                                    <th>
+                                                                        Mo
+                                                                    </th>
+                                                                    <th>
+                                                                        Tu
+                                                                    </th>
+                                                                    <th>
+                                                                        We
+                                                                    </th>
+                                                                    <th>
+                                                                        Th
+                                                                    </th>
+                                                                    <th>
+                                                                        Fr
+                                                                    </th>
+                                                                    <th>
+                                                                        Sa
+                                                                    </th>
+                                                                </tr>
+                                                            </thead>
+                                                            <tbody id="arrival-current-month">
+                                                            </tbody>
+                                                        </table>
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div>
-                                            Select a date
+                                        <div className="breadcrumb">
                                         </div>
-                                    </div>
-
+                                        <div className="departure-date-holder">
+                                            <a id="departure-date-dropdown" className="departure-date-dropdown"
+                                            onClick={this.ToggleDepartureDropdown}>
+                                                Select a date
+                                            </a>
+                                            <div id="departure-dropdown-content" className="departure-dropdown-content">
+                                                <div className="content-holder">
+                                                    <div className="current-month">
+                                                            <h3 id="d-current-month-year">
+                                                            </h3>
+                                                            <table>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>
+                                                                            Su
+                                                                        </th>
+                                                                        <th>
+                                                                            Mo
+                                                                        </th>
+                                                                        <th>
+                                                                            Tu
+                                                                        </th>
+                                                                        <th>
+                                                                            We
+                                                                        </th>
+                                                                        <th>
+                                                                            Th
+                                                                        </th>
+                                                                        <th>
+                                                                            Fr
+                                                                        </th>
+                                                                        <th>
+                                                                            Sa
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="departure-current-month">
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                        <div className="next-month">
+                                                            <h3 id="d-next-month-year">
+                                                            </h3>
+                                                            <table>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>
+                                                                            Su
+                                                                        </th>
+                                                                        <th>
+                                                                            Mo
+                                                                        </th>
+                                                                        <th>
+                                                                            Tu
+                                                                        </th>
+                                                                        <th>
+                                                                            We
+                                                                        </th>
+                                                                        <th>
+                                                                            Th
+                                                                        </th>
+                                                                        <th>
+                                                                            Fr
+                                                                        </th>
+                                                                        <th>
+                                                                            Sa
+                                                                        </th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="departure-next-month">
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     <div>
                                         <div>
                                             Type a number

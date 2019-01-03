@@ -64,8 +64,8 @@
 
 .select-country-holder{
     display: flex;
-    align-items: center;
     flex-direction: column;
+    margin-left: 15px;
 }
 
 .select-country-dropdown{
@@ -73,14 +73,12 @@
     width: 200px;
     border-radius: 10px;
     border: 10px;
-    margin-left: 15px;
     background-color: white;
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
     cursor: pointer;
-
     -moz-user-select: none; 
     -webkit-user-select: none; 
     -ms-user-select:none; 
@@ -88,23 +86,23 @@
     -o-user-select:none;
 }
 
-.select-country-dropdown:hover, .select-country-dropdown-show{
+.select-country-dropdown:hover{
     background-color: lightgrey;
 }
 
 .country-dropdown-content{
     display: none;
     position: absolute;
-    width: 300px;
+    width: 200px;
     max-height: 300px;
     background-color: white;
     margin-top: 40px;
-    margin-left: 57px;
+    /* margin-left: 57px; */
     border-radius: 10px;
     overflow-y: auto;
 }
 
-.content-holder{
+.country-dropdown-content .content-holder{
     display: flex;
     height: 100%;
     width: 100%;
@@ -112,11 +110,11 @@
     flex-direction: column;
 }
 
-.content-holder a{
+.country-dropdown-content .content-holder a{
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 30px;
+    height: 50px;
     text-decoration: none;
     color: black;
     cursor: pointer;
@@ -128,7 +126,7 @@
 
 }
 
-.content-holder a:hover{
+.country-dropdown-content .content-holder a:hover{
     background-color: lightgrey;
 }
 
@@ -138,6 +136,157 @@
     background-color: red;
 }
 
+.select-arrival-departure-date-holder{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    width: 400px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+.arrival-date-holder{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.arrival-date-dropdown{
+    height: 40px;
+    width: 100%;
+    background-color: white;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 0px 0px 10px;
+    cursor: pointer;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; 
+    user-select:none;
+    -o-user-select:none;
+}
+.arrival-keep-active{
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    margin-top: 40px;
+    border-radius: 10px;
+    z-index: 11;
+}
+
+.arrival-dropdown-content{
+    display: none;
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    background-color: linen;
+    margin-top: 40px;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.arrival-dropdown-content .content-holder{
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.arrival-dropdown-content .previous-month{
+    width:50%;
+    height:100%;
+}
+
+.arrival-dropdown-content .previous-month table{
+    width: 100%;
+    padding-right: 5px;
+}
+
+.arrival-dropdown-content .current-month{
+    width:50%;
+    height:100%;
+}
+
+.arrival-dropdown-content .current-month table{
+    width: 100%;
+    padding-left: 5px;
+}
+
+.breadcrumb{
+    border-left: 2px solid lightgray;
+    margin: 5px auto;
+}
+
+.departure-date-holder{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.departure-date-dropdown{
+    height: 40px;
+    width: 200px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 0px 10px 10px 0px;
+    cursor: pointer;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; 
+    user-select:none;
+    -o-user-select:none;
+}
+
+.departure-dropdown-content{
+    display: none;
+    position: absolute;
+    width: 400px;
+    height: 300px;
+    background-color: linen;
+    margin-top: 40px;
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.departure-dropdown-content .content-holder{
+    width: 100%;
+    height: 100%;
+    max-height: 400px;
+    display: flex;
+    flex-direction: row;
+    padding: 5px;
+}
+
+.departure-dropdown-content .current-month{
+    width:50%;
+    height:100%;
+}
+
+.departure-dropdown-content .current-month table{
+    width: 100%;
+    padding-right: 5px;
+}
+
+.departure-dropdown-content .next-month{
+    width:50%;
+    height:100%;
+}
+
+.departure-dropdown-content .next-month table{
+    width: 100%;
+    padding-left: 5px;
+}
+
 .show {
     display: block;
+}
+
+.active{
+    background-color: lightgrey;
 }
