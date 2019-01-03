@@ -128,13 +128,18 @@ class Section1 extends Component{
     }
 
     ANavNext = (currentTb, currentMY, nextTb, nextMY) => {
-        this.ShowMonthYear(currentTb, currentMY, aCurrentMonth, aCurrentYear)
-
         //increase
         aCurrentYear = (aCurrentMonth === 11) ? aCurrentYear + 1 : aCurrentYear;
         aCurrentMonth = (aCurrentMonth + 1) % 12;
+        this.ShowMonthYear(currentTb, currentMY, aCurrentMonth, aCurrentYear)
 
-        this.ShowMonthYear(nextTb, nextMY, aCurrentMonth, aCurrentYear)
+        //increase again
+        let year = aCurrentYear,
+            month = aCurrentMonth
+
+        year = (year === 11) ? year + 1 : year;
+        month = (month + 1) % 12;
+        this.ShowMonthYear(nextTb, nextMY, month, year)
     }
     
     DNavPrevious = (currentTb, currentMY, nextTb, nextMY) => {
@@ -148,13 +153,19 @@ class Section1 extends Component{
     }
 
     DNavNext = (currentTb, currentMY, nextTb, nextMY) => {
-        this.ShowMonthYear(currentTb, currentMY, dCurrentMonth, dCurrentYear)
-
         //increase
         dCurrentYear = (dCurrentMonth === 11) ? dCurrentYear + 1 : dCurrentYear;
         dCurrentMonth = (dCurrentMonth + 1) % 12;
+        this.ShowMonthYear(currentTb, currentMY, dCurrentMonth, dCurrentYear)
 
-        this.ShowMonthYear(nextTb, nextMY, dCurrentMonth, dCurrentYear)
+        //increase again
+        let year = dCurrentYear,
+            month = dCurrentMonth
+
+        year = (year === 11) ? year + 1 : year;
+        month = (month + 1) % 12;
+
+        this.ShowMonthYear(nextTb, nextMY, month, year)
     }
 
     componentDidMount(){
@@ -273,17 +284,20 @@ class Section1 extends Component{
                                                                 
                                                                 </p>
                                                             </div>
-                                                            
-                                                            <table>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>Su</th><th>Mo</th><th>Tu</th>
-                                                                        <th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody id="arrival-current-month">
-                                                                </tbody>
-                                                            </table>
+                                                            <div className="md-show">
+                                                                <div>
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Su</th><th>Mo</th><th>Tu</th>
+                                                                            <th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody id="arrival-current-month">
+                                                                    </tbody>
+                                                                </table>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div className="next-month">
@@ -299,16 +313,20 @@ class Section1 extends Component{
                                                                 </p>
                                                             </div>
                                                             
-                                                            <table>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>Su</th><th>Mo</th><th>Tu</th>
-                                                                        <th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody id="arrival-next-month">
-                                                                </tbody>
-                                                            </table>
+                                                            <div className="md-show">
+                                                                <div>
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Su</th><th>Mo</th><th>Tu</th>
+                                                                            <th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody id="arrival-next-month">
+                                                                    </tbody>
+                                                                </table>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -335,16 +353,20 @@ class Section1 extends Component{
                                                                 </p>
                                                             </div>
                                                             
-                                                            <table>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>Su</th><th>Mo</th><th>Tu</th>
-                                                                        <th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody id="departure-current-month">
-                                                                </tbody>
-                                                            </table>
+                                                            <div className="md-show">
+                                                                <div>
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Su</th><th>Mo</th><th>Tu</th>
+                                                                            <th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody id="departure-current-month">
+                                                                    </tbody>
+                                                                </table>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     <div className="next-month">
@@ -359,16 +381,21 @@ class Section1 extends Component{
                                                                 <p id="d-next-month-year">
                                                                 </p>
                                                             </div>
-                                                            <table>
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th>Su</th><th>Mo</th><th>Tu</th>
-                                                                        <th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
-                                                                    </tr>
-                                                                </thead>
-                                                                <tbody id="departure-next-month">
-                                                                </tbody>
-                                                            </table>
+
+                                                            <div className="md-show">
+                                                                <div>
+                                                                <table>
+                                                                    <thead>
+                                                                        <tr>
+                                                                            <th>Su</th><th>Mo</th><th>Tu</th>
+                                                                            <th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody id="departure-next-month">
+                                                                    </tbody>
+                                                                </table>
+                                                                </div>
+                                                            </div>
                                                         </div>
                                                     </div>
                                                     </div>
