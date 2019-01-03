@@ -4,7 +4,11 @@ import './Section1.css'
 
 let today = new Date(),
     currentMonth = today.getMonth(),
-    currentYear = today.getFullYear()
+    currentYear = today.getFullYear(),
+    aCurrentMonth = currentMonth,
+    aCurrentYear = currentYear,
+    dCurrentMonth = currentMonth,
+    dCurrentYear = currentYear
 
 
 
@@ -113,7 +117,48 @@ class Section1 extends Component{
         }
     }
 
+    ANavPrevious = (currentTb, currentMY, nextTb, nextMY) => {
+        this.ShowMonthYear(nextTb, nextMY, aCurrentMonth, aCurrentYear)
+
+        //decrease
+        aCurrentYear = (aCurrentMonth === 0) ? aCurrentYear - 1 : aCurrentYear
+        aCurrentMonth = (aCurrentMonth === 0) ? 11 : aCurrentMonth - 1;
+        
+        this.ShowMonthYear(currentTb, currentMY, aCurrentMonth, aCurrentYear)
+    }
+
+    ANavNext = (currentTb, currentMY, nextTb, nextMY) => {
+        this.ShowMonthYear(currentTb, currentMY, aCurrentMonth, aCurrentYear)
+
+        //increase
+        aCurrentYear = (aCurrentMonth === 11) ? aCurrentYear + 1 : aCurrentYear;
+        aCurrentMonth = (aCurrentMonth + 1) % 12;
+
+        this.ShowMonthYear(nextTb, nextMY, aCurrentMonth, aCurrentYear)
+    }
+    
+    DNavPrevious = (currentTb, currentMY, nextTb, nextMY) => {
+        this.ShowMonthYear(nextTb, nextMY, dCurrentMonth, dCurrentYear)
+
+        //decrease
+        dCurrentYear = (dCurrentMonth === 0) ? dCurrentYear - 1 : dCurrentYear
+        dCurrentMonth = (dCurrentMonth === 0) ? 11 : dCurrentMonth - 1;
+
+        this.ShowMonthYear(currentTb, currentMY, dCurrentMonth, dCurrentYear)
+    }
+
+    DNavNext = (currentTb, currentMY, nextTb, nextMY) => {
+        this.ShowMonthYear(currentTb, currentMY, dCurrentMonth, dCurrentYear)
+
+        //increase
+        dCurrentYear = (dCurrentMonth === 11) ? dCurrentYear + 1 : dCurrentYear;
+        dCurrentMonth = (dCurrentMonth + 1) % 12;
+
+        this.ShowMonthYear(nextTb, nextMY, dCurrentMonth, dCurrentYear)
+    }
+
     componentDidMount(){
+        //control the dropdowns
         window.onclick = (e) => {
             if(!e.target.matches('.select-country-dropdown')){
                 let countryDropdown = document.getElementById("country-dropdown-content")
@@ -160,23 +205,18 @@ class Section1 extends Component{
 
 
         //initialize arrival date
-        let previous = new Date()
-        previous.setDate(1)
-        previous.setMonth(previous.getMonth() - 1)
-
-        let previousYear = previous.getFullYear(),
-            previousMonth = previous.getMonth()
-
-
-        this.ShowMonthYear("arrival-previous-month", "a-previous-month-year", previousMonth, previousYear)
-        this.ShowMonthYear("arrival-current-month", "a-current-month-year", currentMonth,currentYear)
-
-        //initialize departure date
         let next = new Date()
         next.setDate(1)
         next.setMonth(next.getMonth() + 1)
 
-        this.ShowMonthYear("departure-current-month", "d-current-month-year", currentMonth, currentYear)
+
+        this.ShowMonthYear("arrival-current-month", "a-current-month-year", aCurrentMonth, aCurrentYear)
+        this.ShowMonthYear("arrival-next-month", "a-next-month-year", next.getMonth(), next.getFullYear())
+
+        //initialize departure date
+        
+
+        this.ShowMonthYear("departure-current-month", "d-current-month-year", dCurrentMonth, dCurrentYear)
         this.ShowMonthYear("departure-next-month", "d-next-month-year", next.getMonth(), next.getFullYear())
     }
 
@@ -220,71 +260,56 @@ class Section1 extends Component{
                                             <div id="arrival-dropdown-content" className="arrival-dropdown-content"
                                             >
                                                 <div className="content-holder">
-                                                    <div className="previous-month">
-                                                        <h3 id="a-previous-month-year">
-                                                        </h3>
-                                                        <table>
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>
-                                                                        Su
-                                                                    </th>
-                                                                    <th>
-                                                                        Mo
-                                                                    </th>
-                                                                    <th>
-                                                                        Tu
-                                                                    </th>
-                                                                    <th>
-                                                                        We
-                                                                    </th>
-                                                                    <th>
-                                                                        Th
-                                                                    </th>
-                                                                    <th>
-                                                                        Fr
-                                                                    </th>
-                                                                    <th>
-                                                                        Sa
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody id="arrival-previous-month">
-                                                            </tbody>
-                                                        </table>
-                                                    </div>
                                                     <div className="current-month">
-                                                        <h3 id="a-current-month-year">
-                                                        </h3>
-                                                        <table>
-                                                            <thead>
-                                                                <tr>
-                                                                    <th>
-                                                                        Su
-                                                                    </th>
-                                                                    <th>
-                                                                        Mo
-                                                                    </th>
-                                                                    <th>
-                                                                        Tu
-                                                                    </th>
-                                                                    <th>
-                                                                        We
-                                                                    </th>
-                                                                    <th>
-                                                                        Th
-                                                                    </th>
-                                                                    <th>
-                                                                        Fr
-                                                                    </th>
-                                                                    <th>
-                                                                        Sa
-                                                                    </th>
-                                                                </tr>
-                                                            </thead>
-                                                            <tbody id="arrival-current-month">
-                                                            </tbody>
-                                                        </table>
+                                                        <div className="nav-btn-holder" 
+                                                        onClick={this.ANavPrevious.bind(this, "arrival-current-month",
+                                                        "a-current-month-year", "arrival-next-month", "a-next-month-year")}>
+                                                            <i id="previous-month-btn" className="fas fa-angle-left fa-lg"></i>
+                                                        </div>
+
+                                                        <div className="calendar-divider">
+                                                            <div className="my-inform">
+                                                                <p id="a-current-month-year">
+                                                                
+                                                                </p>
+                                                            </div>
+                                                            
+                                                            <table>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Su</th><th>Mo</th><th>Tu</th>
+                                                                        <th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="arrival-current-month">
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
+                                                    </div>
+                                                    <div className="next-month">
+                                                        <div className="nav-btn-holder"
+                                                        onClick={this.ANavNext.bind(this, "arrival-current-month",
+                                                        "a-current-month-year", "arrival-next-month", "a-next-month-year")}>
+                                                            <i id="next-month-btn" className="fas fa-angle-right fa-lg"></i>
+                                                        </div>
+                                                        
+                                                        <div className="calendar-divider">
+                                                            <div className="my-inform">
+                                                                <p id="a-next-month-year">
+                                                                </p>
+                                                            </div>
+                                                            
+                                                            <table>
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th>Su</th><th>Mo</th><th>Tu</th>
+                                                                        <th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
+                                                                    </tr>
+                                                                </thead>
+                                                                <tbody id="arrival-next-month">
+                                                                </tbody>
+                                                            </table>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
@@ -299,71 +324,53 @@ class Section1 extends Component{
                                             <div id="departure-dropdown-content" className="departure-dropdown-content">
                                                 <div className="content-holder">
                                                     <div className="current-month">
-                                                            <h3 id="d-current-month-year">
-                                                            </h3>
+                                                        <div className="nav-btn-holder"
+                                                        onClick={this.DNavPrevious.bind(this, "departure-current-month",
+                                                        "d-current-month-year", "departure-next-month", "d-next-month-year")}>
+                                                            <i id="previous-month-btn" className="fas fa-angle-left fa-lg"></i>
+                                                        </div>
+                                                        <div className="calendar-divider">
+                                                            <div className="my-inform">
+                                                                <p id="d-current-month-year">
+                                                                </p>
+                                                            </div>
+                                                            
                                                             <table>
                                                                 <thead>
                                                                     <tr>
-                                                                        <th>
-                                                                            Su
-                                                                        </th>
-                                                                        <th>
-                                                                            Mo
-                                                                        </th>
-                                                                        <th>
-                                                                            Tu
-                                                                        </th>
-                                                                        <th>
-                                                                            We
-                                                                        </th>
-                                                                        <th>
-                                                                            Th
-                                                                        </th>
-                                                                        <th>
-                                                                            Fr
-                                                                        </th>
-                                                                        <th>
-                                                                            Sa
-                                                                        </th>
+                                                                        <th>Su</th><th>Mo</th><th>Tu</th>
+                                                                        <th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody id="departure-current-month">
                                                                 </tbody>
                                                             </table>
                                                         </div>
-                                                        <div className="next-month">
-                                                            <h3 id="d-next-month-year">
-                                                            </h3>
+                                                    </div>
+                                                    <div className="next-month">
+                                                        <div className="nav-btn-holder"
+                                                        onClick={this.DNavNext.bind(this, "departure-current-month",
+                                                        "d-current-month-year", "departure-next-month", "d-next-month-year")}>
+                                                            <i id="next-month-btn" className="fas fa-angle-right fa-lg"></i>
+                                                        </div>
+
+                                                        <div className="calendar-divider">
+                                                            <div className="my-inform">
+                                                                <p id="d-next-month-year">
+                                                                </p>
+                                                            </div>
                                                             <table>
                                                                 <thead>
                                                                     <tr>
-                                                                        <th>
-                                                                            Su
-                                                                        </th>
-                                                                        <th>
-                                                                            Mo
-                                                                        </th>
-                                                                        <th>
-                                                                            Tu
-                                                                        </th>
-                                                                        <th>
-                                                                            We
-                                                                        </th>
-                                                                        <th>
-                                                                            Th
-                                                                        </th>
-                                                                        <th>
-                                                                            Fr
-                                                                        </th>
-                                                                        <th>
-                                                                            Sa
-                                                                        </th>
+                                                                        <th>Su</th><th>Mo</th><th>Tu</th>
+                                                                        <th>We</th><th>Th</th><th>Fr</th><th>Sa</th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody id="departure-next-month">
                                                                 </tbody>
                                                             </table>
                                                         </div>
+                                                    </div>
                                                     </div>
                                                 </div>
                                             </div>
