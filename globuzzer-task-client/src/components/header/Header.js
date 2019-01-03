@@ -13,14 +13,17 @@ class Header extends Component{
 
                     <div className="right-section">
                         <div className="home-selection-holder">
+                            <i className="fas fa-home fa-md"></i>
                             <a className="home-display" href="#">Home</a>
                         </div>
 
                         <div className="services-selection-holder">
+                            <i className="fas fa-bicycle"></i>
                             <a className="services-display" href="#">Services</a>
                         </div>
                         
                         <div className="my-package-selection-holder">
+                            <i className="fas fa-shopping-cart"></i>
                             <a className="my-package-display" href="#">My package</a>
                         </div>
 

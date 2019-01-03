@@ -10,8 +10,8 @@ let today = new Date(),
     dCurrentMonth = currentMonth,
     dCurrentYear = currentYear
 
-
-
+let image_index = 0
+let timer
 class Section1 extends Component{
     country_list = ["Afghanistan","Albania","Algeria","Andorra","Angola","Anguilla","Antigua Barbuda","Argentina","Armenia","Aruba","Australia","Austria","Azerbaijan","Bahamas"
 	,"Bahrain","Bangladesh","Barbados","Belarus","Belgium","Belize","Benin","Bermuda","Bhutan","Bolivia","Bosnia Herzegovina","Botswana","Brazil","British Virgin Islands"
@@ -31,11 +31,65 @@ class Section1 extends Component{
 
     months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
+    images = ['/images/sweden/sweden.jpg', '/images/denmark/denmark.jpg', '/images/finland/finland.jpg', '/images/norway/norway.jpg']
+    
+    welcome_banners = ['Sweden', 'Denmark', 'Finland', 'Norway']
+
     state={
         render_country_options:null,
         current_selected_country: 'Select a country',
-        arrival_date_content: null,
-        departure_date_content: null
+        current_image: <img src={this.images[image_index]} />,
+        place_display: this.welcome_banners[image_index]
+
+    }
+
+    ChangeImageAuto(){
+        timer = setInterval(() => {
+            image_index++
+
+            if(image_index === 4){
+                image_index = 0
+            }
+            this.setState({
+                current_image: <img src={this.images[image_index]} />,
+                place_display: this.welcome_banners[image_index]
+            })
+
+            let imgBtnHolder = document.getElementById("image-nav-bttn-holder")
+
+            imgBtnHolder.childNodes[image_index].classList.add("active-img-nav-bttn")
+            imgBtnHolder.childNodes[image_index].classList.remove("non-active-img-nav-bttn")
+
+            for(let i = 0; i < imgBtnHolder.childNodes.length; i++){
+                if(i !== image_index){
+                    imgBtnHolder.childNodes[i].classList.remove("active-img-nav-bttn")
+                    imgBtnHolder.childNodes[i].classList.add("non-active-img-nav-bttn")
+                }
+            }
+        }, 10000)
+    }
+
+    ChangeImageTo = (index) => {
+        clearInterval(timer)
+        image_index = index
+        this.setState({
+            current_image: <img src={this.images[image_index]} />,
+            place_display: this.welcome_banners[image_index]
+        })
+
+        let imgBtnHolder = document.getElementById("image-nav-bttn-holder")
+
+        imgBtnHolder.childNodes[image_index].classList.add("active-img-nav-bttn")
+            imgBtnHolder.childNodes[image_index].classList.remove("non-active-img-nav-bttn")
+
+        for(let i = 0; i < imgBtnHolder.childNodes.length; i++){
+            if(i !== image_index){
+                imgBtnHolder.childNodes[i].classList.remove("active-img-nav-bttn")
+                imgBtnHolder.childNodes[i].classList.add("non-active-img-nav-bttn")
+            }
+        }
+
+        this.ChangeImageAuto()
     }
 
     SelectCountry = (e) => {
@@ -43,6 +97,7 @@ class Section1 extends Component{
             current_selected_country: e.target.textContent
         })
     }
+
 
     ToggleCountryDropdown = () => {
         window.document.getElementById("country-dropdown-content").classList.toggle("show")
@@ -169,6 +224,9 @@ class Section1 extends Component{
     }
 
     componentDidMount(){
+        //change images every 10s
+        this.ChangeImageAuto()
+
         //control the dropdowns
         window.onclick = (e) => {
             if(!e.target.matches('.select-country-dropdown')){
@@ -240,20 +298,49 @@ class Section1 extends Component{
                 <div className="stacking-contents">
                     <div className="images-holder">
                         <div className="images">
-                            <img src="/images/sweden/sweden.jpg" />
+                            {this.state.current_image}
                         </div>
                     </div>
                     <div className="center-info-holder">
                         <div className="center-info">
                             <div className="welcome-banner">
-                                <p>Welcome to Sweden</p>
+                                <p>Welcome to {this.state.place_display}</p>
                             </div>
+
                             <div className="info-bar-holder">
+                                <div className="info-bar-cover">
+                                    <div className="titles">
+                                        <div className="country-title">
+                                            <p>
+                                                Country
+                                            </p>
+                                        </div>
+                                        
+                                        <div className="arrival-title">
+                                            <p>
+                                                Arrival date
+                                            </p>
+                                        </div>
+                                        
+                                        <div className="departure-title">
+                                            <p>
+                                                Departure date
+                                            </p>
+                                        </div>
+                                        
+                                        <div className="travelers-title">
+                                            <p>
+                                                Number of travelers
+                                            </p>
+                                        </div>
+                                    </div>
                                 <div className="info-bar">
                                     <div className="select-country-holder">
                                         <a id="select-country-dropdown" className="select-country-dropdown" 
                                         onClick={this.ToggleCountryDropdown}>
+                                            <i className="fas fa-map-marker-alt"></i>
                                             {this.state.current_selected_country}
+                                            <i className="fas fa-caret-down fa-lg"></i>
                                         </a>
                                         <div id="country-dropdown-content" className="country-dropdown-content">
                                             <div className="content-holder">
@@ -266,6 +353,7 @@ class Section1 extends Component{
                                         <div className="arrival-date-holder">
                                             <a id="arrival-date-dropdown" className="arrival-date-dropdown"
                                             onClick={this.ToggleArrivalDropdown}>
+                                                <i className="far fa-calendar-alt"></i>
                                                 Select a date
                                             </a>
                                             <div id="arrival-dropdown-content" className="arrival-dropdown-content"
@@ -337,6 +425,7 @@ class Section1 extends Component{
                                         <div className="departure-date-holder">
                                             <a id="departure-date-dropdown" className="departure-date-dropdown"
                                             onClick={this.ToggleDepartureDropdown}>
+                                                <i className="far fa-calendar-alt"></i>
                                                 Select a date
                                             </a>
                                             <div id="departure-dropdown-content" className="departure-dropdown-content">
@@ -402,12 +491,29 @@ class Section1 extends Component{
                                                 </div>
                                             </div>
                                         </div>
-                                    <div>
-                                        <div>
-                                            Type a number
+                                    <div className="number-guests-holder">
+                                        <div className="number-guests">
+                                            <i className="fas fa-users"></i>
+                                            <input placeholder="Type a number"></input>
                                         </div>
                                     </div>
+                                    </div>
                                 </div>
+                            </div>
+                        </div>
+
+                        <div className="image-nav-bttn-holder" id="image-nav-bttn-holder">
+                            <div className="sweden-dot active-img-nav-bttn" onClick={this.ChangeImageTo.bind(this, 0)}>
+
+                            </div>
+                            <div className="denmark-dot non-active-img-nav-bttn" onClick={this.ChangeImageTo.bind(this, 1)}>
+
+                            </div>
+                            <div className="finland-dot non-active-img-nav-bttn" onClick={this.ChangeImageTo.bind(this, 2)}>
+
+                            </div>
+                            <div className="norway-dot non-active-img-nav-bttn" onClick={this.ChangeImageTo.bind(this, 3)}>
+
                             </div>
                         </div>
                     </div>

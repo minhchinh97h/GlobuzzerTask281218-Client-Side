@@ -45,6 +45,11 @@
     padding: 30px;
 }
 
+.home-selection-holder .fa-home{
+    margin-right: 5px;
+    color:white;
+}
+
 .home-display{
 }
 
@@ -52,6 +57,11 @@
 
 .services-selection-holder{
     padding: 30px;
+}
+
+.services-selection-holder .fa-bicycle{
+    margin-right: 5px;
+    color:white;
 }
 
 .services-display{
@@ -62,6 +72,11 @@
 
 .my-package-selection-holder{
     padding: 30px;
+}
+
+.my-package-selection-holder .fa-shopping-cart{
+    margin-right: 5px;
+    color:white;
 }
 
 .my-package-display{
@@ -80,4 +95,7 @@
     color: white;
 }
 
+.currency-selection-display option{
+    background-color: rgb(105,105,105)
+}
 

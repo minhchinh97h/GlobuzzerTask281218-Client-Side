@@ -18,6 +18,7 @@
     height: 100%;
     width: 100%;
     z-index: 0;
+    opacity: 0.6;
 }
 
 .center-info-holder{
@@ -28,35 +29,76 @@
     z-index: 10;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .center-info{
-    background-color: lightgrey;
-    height: 300px;
-    width: 800px;
+    height: 500px;
+    width: 850px;
 }
 
 .welcome-banner{
-    height: 45%;
+    height: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
+    color: white;
+
 }
 
 .welcome-banner p{
+    margin-top: 20%;
     font-size: 24px;
 }
 
+
 .info-bar-holder{
-    height: 55%;
+    height: 50%;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.info-bar-cover{
+    margin-bottom: 50px;
+}
+
+.titles {
+    display: flex;
+}
+
+.titles p{
+    margin: 0 0 0 15px;
+    font-size: 14px;
+}
+
+.titles .country-title{
+    width:200px;
+    margin-left: 15px;
+    display:flex;
+}
+
+.titles .arrival-title{
+    width:200px;
+    margin-left: 10px;
+    display:flex;
+}
+
+.titles .departure-title{
+    width:200px;
+    display:flex;
+}
+
+.titles .travelers-title{
+    width:200px;
+    margin-left: 10px;
+    display:flex;
 }
 
 .info-bar{
     width: 100%;
     height: 60px;
-    background-color: aqua;
+    background-color: rgba(192, 199, 199, 0.795);
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -73,7 +115,7 @@
     width: 200px;
     border-radius: 10px;
     border: 10px;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -84,6 +126,14 @@
     -ms-user-select:none; 
     user-select:none;
     -o-user-select:none;
+}
+
+.select-country-dropdown .fa-map-marker-alt{
+    margin-right: 10px;
+}
+
+.select-country-dropdown .fa-caret-down{
+    margin-left: 10px;
 }
 
 .select-country-dropdown:hover{
@@ -143,6 +193,10 @@
     width: 400px;
     margin-left: 10px;
     border-radius: 10px;
+}
+
+.select-arrival-departure-date-holder .fa-calendar-alt{
+    margin-right: 15px;
 }
 
 .arrival-date-holder{
@@ -338,6 +392,84 @@
     padding-left: 5px;
 }
 
+
+.number-guests-holder{
+    margin-left: 10px;
+}
+
+.number-guests{
+    width: 200px;
+    background-color: white;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-guests .fa-users{
+    margin: 10px;
+}
+
+.number-guests input{
+    height: 100%;
+    border: 0px;
+    border-radius: 0 10px 10px 0;
+}
+
+.number-guests input:focus{
+    outline: none;
+}
+
+.image-nav-bttn-holder{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.image-nav-bttn-holder .sweden-dot{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+.image-nav-bttn-holder .denmark-dot{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+.image-nav-bttn-holder .finland-dot{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    margin-right: 10px;
+    cursor: pointer;
+}
+
+
+.image-nav-bttn-holder .norway-dot{
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+
+.non-active-img-nav-bttn{
+    background-color: rgb(37, 36, 36, 0.7);
+}
+
+.active-img-nav-bttn{
+    background-color: rgba(212, 37, 75, 0.7);
+}
 
 .show {
     display: block;
