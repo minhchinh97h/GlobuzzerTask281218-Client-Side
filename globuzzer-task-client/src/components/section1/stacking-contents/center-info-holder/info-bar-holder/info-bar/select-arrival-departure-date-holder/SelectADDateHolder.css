@@ -1,0 +1,28 @@
+.select-arrival-departure-date-holder{
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    width: 400px;
+    margin-left: 10px;
+    border-radius: 10px;
+}
+
+.select-arrival-departure-date-holder .fa-calendar-alt{
+    margin-right: 15px;
+}
+
+
+.breadcrumb{
+    border-left: 2px solid lightgray;
+    margin: 5px auto;
+}
+
+
+.non-active-img-nav-bttn{
+    background-color: rgb(37, 36, 36, 0.7);
+}
+
+.active-img-nav-bttn{
+    background-color: rgba(212, 37, 75, 0.7);
+}
+

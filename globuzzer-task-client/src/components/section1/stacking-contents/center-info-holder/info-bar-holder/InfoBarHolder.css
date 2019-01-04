@@ -1,0 +1,13 @@
+.info-bar-holder{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.info-bar-cover{
+    margin-bottom: 50px;
+}
+
+
+

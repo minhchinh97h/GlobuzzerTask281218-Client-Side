@@ -1,0 +1,75 @@
+.select-country-holder{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+
+.select-country-dropdown{
+    height: 40px;
+    width: 200px;
+    border-radius: 10px;
+    border: 10px;
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    cursor: pointer;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; 
+    user-select:none;
+    -o-user-select:none;
+}
+
+.select-country-dropdown .fa-map-marker-alt{
+    margin-right: 10px;
+}
+
+.select-country-dropdown .fa-caret-down{
+    margin-left: 10px;
+}
+
+.select-country-dropdown:hover{
+    background-color: lightgrey;
+}
+
+.country-dropdown-content{
+    display: none;
+    position: absolute;
+    width: 200px;
+    max-height: 260px;
+    background-color: white;
+    margin-top: 40px;
+    /* margin-left: 57px; */
+    border-radius: 10px;
+    overflow-y: auto;
+}
+
+.country-dropdown-content .content-holder{
+    display: flex;
+    height: 100%;
+    width: 100%;
+    padding: 10px 0;
+    flex-direction: column;
+}
+
+.country-dropdown-content .content-holder a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    -moz-user-select: none; 
+    -webkit-user-select: none; 
+    -ms-user-select:none; 
+    user-select:none;
+    -o-user-select:none;
+
+}
+
+.country-dropdown-content .content-holder a:hover{
+    background-color: lightgrey;
+}

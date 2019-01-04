@@ -1,0 +1,31 @@
+.titles {
+    display: flex;
+}
+
+.titles p{
+    margin: 0 0 0 15px;
+    font-size: 14px;
+}
+
+.titles .country-title{
+    width:200px;
+    margin-left: 15px;
+    display:flex;
+}
+
+.titles .arrival-title{
+    width:200px;
+    margin-left: 10px;
+    display:flex;
+}
+
+.titles .departure-title{
+    width:200px;
+    display:flex;
+}
+
+.titles .travelers-title{
+    width:200px;
+    margin-left: 10px;
+    display:flex;
+}

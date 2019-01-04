@@ -1,0 +1,12 @@
+.info-bar{
+    width: 100%;
+    height: 60px;
+    background-color: rgba(192, 199, 199, 0.795);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+

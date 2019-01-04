@@ -1,0 +1,27 @@
+.number-guests-holder{
+    margin-left: 10px;
+}
+
+.number-guests{
+    width: 200px;
+    background-color: white;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.number-guests .fa-users{
+    margin: 10px;
+}
+
+.number-guests input{
+    height: 100%;
+    border: 0px;
+    border-radius: 0 10px 10px 0;
+}
+
+.number-guests input:focus{
+    outline: none;
+}

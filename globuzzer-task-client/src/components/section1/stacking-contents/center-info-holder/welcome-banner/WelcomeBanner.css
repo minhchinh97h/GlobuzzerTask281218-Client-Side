@@ -1,0 +1,13 @@
+.welcome-banner{
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+
+.welcome-banner p{
+    margin-top: 20%;
+    font-size: 24px;
+}
