@@ -10,4 +10,18 @@
 }
 
 
+.discover-bttn{
+    margin-top:20px;
+    text-decoration: none;
+    width: 100px;
+    height: 30px;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(243, 45, 19);
+    color: white;
+    cursor: pointer;
+}
 
+.discover-bttn:focus{
+    outline: none
+}

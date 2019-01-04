@@ -11,6 +11,9 @@ class InfoBarHolder extends Component{
                 <div className="info-bar-cover">
                     <Titles />
                     <InfoBar />
+                    <button type="button" className="discover-bttn">
+                        Discover
+                    </button>
                 </div>
             </div>
         )
