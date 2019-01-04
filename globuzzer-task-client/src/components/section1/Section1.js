@@ -3,8 +3,6 @@ import Header from './header/Header'
 import StackingContents from './stacking-contents/StackingContents'
 import './Section1.css'
 
-
-
 let image_index = 0
 let timer
 
@@ -103,7 +101,57 @@ class Section1 extends Component{
                 />
                 
                 <div className="intro-ad-holder">
+                    <div className="advertisement">
+                        <span><b>Discover the Nordics with our package</b></span>
+                    </div>
 
+                    <div className="description">
+                        <span>
+                            Sit amet consectetur adipisicing elit, sed do eiusmo. Tempor
+                            incididunt ut laboren et dolore magna aliqua. Ut enim ad minim
+                            veniam, quis nostrud exercitation ullamco laboris.
+                        </span>
+                    </div>
+                </div>
+
+                <div className="ad-options-holder">
+                    <div className="ad-banner-holder">
+                        <span><b>We've got everything you need, all in one place</b></span>
+                    </div>
+                    <div className="options">
+                        <div className="customer-support-holder">
+                            <div className="hover-place">
+                                <i className="fas fa-phone fa-5x"></i>
+                                <span>24/7 customer support</span>
+                            </div>
+                            
+                        </div>
+
+                        <div className="local-guide-holder">
+                            <div className="hover-place">
+                                <i className="fas fa-map-marked-alt fa-5x"></i>
+                                <span>Local guide</span>
+                            </div>
+                        </div>
+
+                        <div className="customized-package-holder">
+                            <div className="hover-place">
+                                <i className="fas fa-suitcase fa-5x"></i>
+                                <span>Customized packages</span>
+                            </div>
+                        </div>
+
+                        <div className="all-in-one-holder">
+                            <div className="hover-place">
+                                <i className="fas fa-list-ul fa-5x"></i>
+                                <span>All in one</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    
                 </div>
             </div>
         )

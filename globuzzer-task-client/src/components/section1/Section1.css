@@ -5,7 +5,118 @@
 
 .intro-ad-holder{
     width: 100%;
-    height: calc(100% - 50px - 550px);
-    background-color: red;
+    height: 300px;
+    background-color: rgb(255, 217, 202);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
+.advertisement{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.advertisement span{
+    width: 160px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.description{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.description span{
+    width: 65%;
+    text-align: left;
+    font-size: 18px;
+}
+
+
+.ad-options-holder{
+    width: 100%;
+    height: 500px;
+    background-color: rgb(236, 236, 236);
+    display: flex;
+    flex-direction: column;
+}
+
+.ad-banner-holder{
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.ad-banner-holder span{
+    font-size: 24px;
+    color: rgb(44, 73, 99)
+}
+
+.options{
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.options span{
+    margin-top: 30px;
+    
+}
+
+.customer-support-holder{
+    width: 25%;
+    height: 70%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+
+.local-guide-holder{
+    width: 25%;
+    height: 70%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+.customized-package-holder{
+    width: 25%;
+    height: 70%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.all-in-one-holder{
+    width: 25%;
+    height: 70%;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.hover-place{
+    display: flex;
+    flex-direction: column;
+    margin: 50px;
+    cursor: pointer;
+}
+
+.hover-place:hover{
+    color:red;
+}

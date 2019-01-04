@@ -1,6 +1,6 @@
 .stacking-contents{
     position: relative;
-    height: 550px;
+    height: calc(100% - 50px);
 }
 
 
