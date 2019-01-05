@@ -11,7 +11,7 @@ class DepartureDateHolder extends Component{
     months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
     state = {
-
+        current_date: "Select a date"
     }
     
     ToggleDepartureDropdown = () => {
@@ -43,6 +43,12 @@ class DepartureDateHolder extends Component{
         month = (month + 1) % 12;
 
         this.ShowMonthYear(nextTb, nextMY, month, year)
+    }
+
+    SelectDate = (date, node) => {
+        this.setState({
+            current_date: date
+        })
     }
 
     ShowMonthYear(tbId, monthYearId, month, year){
@@ -78,8 +84,18 @@ class DepartureDateHolder extends Component{
                     let cell = document.createElement("td")
                     let cellText = document.createTextNode(date)
 
-                    if(date === today.getDate() && year === today.getFullYear() && month === today.getMonth()){
+                    if(date < today.getDate() && year === today.getFullYear() && month === today.getMonth() 
+                        || (month < today.getMonth() && year === today.getFullYear())
+                        || (year < today.getFullYear()) ){
+                        cell.classList.add("table-td-out-of-date")
+                    }
 
+                    else{
+                        if(date === today.getDate() && year === today.getFullYear() && month === today.getMonth()){
+                            cell.classList.add("table-td-current-date")
+                        }
+                        cell.classList.add("table-td-available")
+                        cell.onclick = this.SelectDate.bind(this, ((month+1) + "/" + date + "/" + year), cell)
                     }
 
                     cell.appendChild(cellText)
@@ -109,7 +125,7 @@ class DepartureDateHolder extends Component{
                 <a id="departure-date-dropdown" className="departure-date-dropdown"
                 onClick={this.ToggleDepartureDropdown}>
                     <i className="far fa-calendar-alt"></i>
-                    Select a date
+                    {this.state.current_date}
                 </a>
                 <div id="departure-dropdown-content" className="departure-dropdown-content">
                     <div className="content-holder">

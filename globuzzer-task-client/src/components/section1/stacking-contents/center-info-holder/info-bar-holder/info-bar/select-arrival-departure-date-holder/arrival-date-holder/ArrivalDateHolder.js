@@ -11,7 +11,7 @@ class ArrivalDateHolder extends Component{
     months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
 
     state = {
-
+        current_date: "Select a date"
     }
 
     ToggleArrivalDropdown = () => {
@@ -42,6 +42,12 @@ class ArrivalDateHolder extends Component{
         year = (year === 11) ? year + 1 : year;
         month = (month + 1) % 12;
         this.ShowMonthYear(nextTb, nextMY, month, year)
+    }
+
+    SelectDate = (date, node) => {
+        this.setState({
+            current_date: date
+        })
     }
 
     ShowMonthYear(tbId, monthYearId, month, year){
@@ -76,9 +82,20 @@ class ArrivalDateHolder extends Component{
                 else{
                     let cell = document.createElement("td")
                     let cellText = document.createTextNode(date)
+                    
+                    
+                    if(date < today.getDate() && year === today.getFullYear() && month === today.getMonth() 
+                        || (month < today.getMonth() && year === today.getFullYear())
+                        || (year < today.getFullYear()) ){
+                        cell.classList.add("table-td-out-of-date")
+                    }
 
-                    if(date === today.getDate() && year === today.getFullYear() && month === today.getMonth()){
-
+                    else{
+                        if(date === today.getDate() && year === today.getFullYear() && month === today.getMonth()){
+                            cell.classList.add("table-td-current-date")
+                        }
+                        cell.classList.add("table-td-available")
+                        cell.onclick = this.SelectDate.bind(this, ((month+1) + "/" + date + "/" + year), cell)
                     }
 
                     cell.appendChild(cellText)
@@ -112,7 +129,7 @@ class ArrivalDateHolder extends Component{
                 <a id="arrival-date-dropdown" className="arrival-date-dropdown"
                 onClick={this.ToggleArrivalDropdown}>
                     <i className="far fa-calendar-alt"></i>
-                    Select a date
+                    {this.state.current_date}
                 </a>
                 <div id="arrival-dropdown-content" className="arrival-dropdown-content">
                     <div className="content-holder">

@@ -67,6 +67,12 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    border: 1px solid black;
+    cursor: pointer;
+    background-color: rgb(184, 175, 175)
+}
+
+.nav-btn-holder i{
 }
 
 .calendar-divider{
@@ -91,6 +97,30 @@
     height: 80%;
     display: flex;
     justify-content: center;
+}
+
+.md-show table {
+}
+
+.md-show table td{
+    border: 0.5px solid black;
+    
+}
+
+.md-show table td:hover{
+    background-color: rgb(202, 195, 195)
+}
+
+.table-td-current-date{
+    background-color: rgb(68, 240, 240)
+}
+
+.table-td-out-of-date{
+    background-color: gray;
+}
+
+.table-td-available{
+    cursor: pointer;
 }
 
 .arrival-dropdown-content .current-month table{
