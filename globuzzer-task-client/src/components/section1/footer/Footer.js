@@ -31,13 +31,13 @@ class Footer extends Component {
 
                     <div className="right-section">
                         <div className="fb-holder">
-                            <a href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a href="#"><i className="fab fa-facebook-f"></i></a>
                         </div>
                         <div className="twitter-holder">
-                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i className="fab fa-twitter"></i></a>
                         </div>
                         <div className="linkedin-holder">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i className="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>

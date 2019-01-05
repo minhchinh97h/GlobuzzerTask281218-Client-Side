@@ -1,13 +1,50 @@
-.welcome-banner{
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    cursor: default;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .welcome-banner{
+        height: 30%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        cursor: default;
+    }
+
+    .welcome-banner p{
+        font-size: 24px;
+    }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+    
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .welcome-banner{
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        cursor: default;
+    }
+
+    .welcome-banner p{
+        margin-top: 20%;
+        font-size: 24px;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
 }
 
-.welcome-banner p{
-    margin-top: 20%;
-    font-size: 24px;
-}
+
+

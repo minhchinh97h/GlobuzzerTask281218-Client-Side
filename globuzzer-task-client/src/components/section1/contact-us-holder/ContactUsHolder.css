@@ -1,0 +1,175 @@
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .contact-us-holder{
+        display: none;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 600px) {
+    .contact-us-holder{
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        background-color: rgb(250, 235, 229);
+    }
+}
+
+.contact-us-description{
+    height: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-us-description span{
+    font-size: 24px;
+    color: rgb(44, 73, 99);
+    cursor: default;
+}
+
+.contact-us-content{
+    height: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 10%;
+}
+
+.contact-us-forms{
+    height: 100%;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.forms-cover{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.forms-cover span{
+    height: 10%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    
+}
+
+.forms-cover span p {
+    margin: 0px;
+    margin-top: 16px;
+    color: rgb(44, 73, 99);
+    cursor: default;
+}
+
+.forms-cover input{
+    width: 100%;
+    height: 35px;
+    border: 1px solid rgb(240, 95, 95);
+    border-radius: 3px;
+    padding-left: 10px;
+}
+
+.forms-cover input:focus{
+    outline-color: red;
+}
+
+.forms-cover textarea{
+    width: 100%;
+    height: 40%;
+    border: 1px solid rgb(240, 95, 95);
+    border-radius: 3px;
+    padding-left: 10px;
+}
+
+.forms-cover textarea:focus{
+    outline-color: red;
+}
+
+.send-message-holder{
+    display: flex;
+    height: calc(100% - (35px*2) - 40% - 30%);
+    width:100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.forms-cover button{
+    text-decoration: none;
+    width: 150px;
+    height: 30px;
+    border-radius: 25px;
+    border: none;
+    background-color: rgb(212, 47, 25);
+    color: white;
+    cursor: pointer;
+}
+
+.contact-us-info{
+    height: 100%;
+    width: 50%;
+    padding-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.contact-us-info span{
+    height: 10%;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.contact-us-info span p{
+    margin: 0px;
+    margin-top: 16px;
+    color: rgb(44, 73, 99);
+}
+
+.contact-us-info span i{
+    margin-left: 5px;
+    
+}
+
+.map{
+    height: 60%;
+    width: 100%;
+}
+
+.map iframe{
+    height: 100%;
+    width: 100%;
+    border: 1px solid rgb(240, 95, 95);
+}
+
+.contact-info{
+    height: 30%;
+    width: 100%;
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-info span{
+    text-align: left;
+    height: 33%;
+    display: flex;
+    align-items: center;
+}
+
+.contact-info span p {
+    margin: 0;
+    color: rgb(44, 73, 99);
+    cursor: default;
+}
+
+.contact-info span i{
+    margin: 0 20px;
+}

@@ -7,13 +7,30 @@ class SelectADDateHolder extends Component{
 
     render(){
         return(
-            <div className="select-arrival-departure-date-holder">
-                <ArrivalDateHolder />
-
-                <div className="breadcrumb">
+            <div className="under-991px-ad-cover">
+                <div className="under-991px-ad-titles">
+                    <div className="under-991px-a">
+                        <p >
+                            Arrival
+                        </p>
+                    </div>
+                    
+                    <div className="under-991px-d">
+                        <p >
+                            Departure
+                        </p>
+                    </div>
+                    
                 </div>
 
-                <DepartureDateHolder />
+                <div className="select-arrival-departure-date-holder">
+                    <ArrivalDateHolder />
+
+                    <div className="breadcrumb">
+                    </div>
+
+                    <DepartureDateHolder />
+                </div>
             </div>
         )
     }

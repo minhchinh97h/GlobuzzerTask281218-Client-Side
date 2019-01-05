@@ -1,11 +1,23 @@
-.client-choose-country-holder{
-    width: 100%;
-    height: 100%;
-    background-color: rgb(204, 248, 233);
-    display: flex;
-    flex-direction: column;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    .client-choose-country-holder{
+        display: none;
+    
+    }
+} 
 
-}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .client-choose-country-holder{
+        width: 100%;
+        height: 100%;
+        background-color: rgb(204, 248, 233);
+        display: flex;
+        flex-direction: column;
+    
+    }
+} 
+
 
 .instruction-holder{
     height: 10%;

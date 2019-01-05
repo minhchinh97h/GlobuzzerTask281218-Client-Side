@@ -1,6 +1,13 @@
 .stacking-contents{
     position: relative;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.first-section-holder{
     height: calc(100% - 50px);
+    position: relative;
 }
 
 

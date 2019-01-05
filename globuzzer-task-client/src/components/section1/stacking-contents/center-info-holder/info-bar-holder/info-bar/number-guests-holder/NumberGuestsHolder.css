@@ -1,5 +1,27 @@
-.number-guests-holder{
-    margin-left: 10px;
+@media only screen and (min-width: 600px) and (max-width: 991px) {
+    .under-991px-guests-cover{
+        height: 30%;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .under-991px-guests-title p{
+        color: white;
+        margin: 0;
+        margin-bottom: 5px;
+    }   
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .number-guests-holder{
+        margin-left: 10px;
+    }
+
+    .under-991px-guests-title{
+        display: none;
+    }
 }
 
 .number-guests{

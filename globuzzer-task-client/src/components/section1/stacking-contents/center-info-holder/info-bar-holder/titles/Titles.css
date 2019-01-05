@@ -1,33 +1,59 @@
-.titles {
-    display: flex;
-    cursor: default;
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+} 
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .titles{
+        display: none;
+    }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .titles {
+        display: flex;
+        cursor: default;
+    }
+    
+    .titles p{
+        margin: 0 0 0 15px;
+        font-size: 14px;
+        color: rgb(255, 255, 255);
+    }
+    
+    .titles .country-title{
+        width:200px;
+        margin-left: 15px;
+        display:flex;
+    }
+    
+    .titles .arrival-title{
+        width:200px;
+        margin-left: 10px;
+        display:flex;
+    }
+    
+    .titles .departure-title{
+        width:200px;
+        display:flex;
+    }
+    
+    .titles .travelers-title{
+        width:200px;
+        margin-left: 10px;
+        display:flex;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
 }
 
-.titles p{
-    margin: 0 0 0 15px;
-    font-size: 14px;
-    color: rgb(255, 255, 255);
-}
-
-.titles .country-title{
-    width:200px;
-    margin-left: 15px;
-    display:flex;
-}
-
-.titles .arrival-title{
-    width:200px;
-    margin-left: 10px;
-    display:flex;
-}
-
-.titles .departure-title{
-    width:200px;
-    display:flex;
-}
-
-.titles .travelers-title{
-    width:200px;
-    margin-left: 10px;
-    display:flex;
-}

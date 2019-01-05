@@ -1,14 +1,50 @@
-.info-bar-holder{
-    height: 50%;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-}
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    
+} 
 
-.info-bar-cover{
-    margin-bottom: 50px;
-}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 991px) {
+    .info-bar-holder{
+        height: 80%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
 
+    .info-bar-cover{
+        margin-bottom: 0px;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+} 
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .info-bar-holder{
+        height: 50%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .info-bar-cover{
+        margin-bottom: 50px;
+    }
+} 
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+
+}
 
 .discover-bttn{
     margin-top:20px;

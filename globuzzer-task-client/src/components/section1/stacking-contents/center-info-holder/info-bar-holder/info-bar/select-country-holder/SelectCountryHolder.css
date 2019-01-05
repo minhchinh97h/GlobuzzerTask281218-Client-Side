@@ -1,10 +1,76 @@
-.select-country-holder{
-    display: flex;
-    flex-direction: column;
-    margin-left: 15px;
-}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 991px){
+    .select-country-holder{
+        height: 30%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .under-991px-cover{
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .under-991px-country-title p {
+        color: white;
+        margin: 0;
+        margin-bottom: 5px;
+    }
+
+    .under-991px-dropdown-cover{
+        display: flex;
+    }
+
+    .country-dropdown-content{
+        display: none;
+        position: absolute;
+        width: 200px;
+        max-height: 260px;
+        margin-top: 40px;
+        background-color: white;
+        /* margin-left: 57px; */
+        border-radius: 10px;
+        overflow-y: auto;
+        z-index: 12;
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .under-991px-country-title {
+        display: none;
+    }
+
+    .under-991px-dropdown-cover{
+    }
+
+    .select-country-holder{
+        display: flex;
+        flex-direction: column;
+        margin-left: 15px;
+    }
+
+    .country-dropdown-content{
+        display: none;
+        position: absolute;
+        width: 200px;
+        max-height: 260px;
+        background-color: white;
+        /* margin-left: 57px; */
+        border-radius: 10px;
+        overflow-y: auto;
+    }
+} 
 
 .select-country-dropdown{
+    position: relative;
     height: 40px;
     width: 200px;
     border-radius: 10px;
@@ -32,18 +98,6 @@
 
 .select-country-dropdown:hover{
     background-color: lightgrey;
-}
-
-.country-dropdown-content{
-    display: none;
-    position: absolute;
-    width: 200px;
-    max-height: 260px;
-    background-color: white;
-    margin-top: 40px;
-    /* margin-left: 57px; */
-    border-radius: 10px;
-    overflow-y: auto;
 }
 
 .country-dropdown-content .content-holder{

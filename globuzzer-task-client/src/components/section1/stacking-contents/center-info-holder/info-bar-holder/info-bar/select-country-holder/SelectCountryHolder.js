@@ -48,16 +48,25 @@ class SelectCountryHolder extends Component{
     render(){
         return(
             <div className="select-country-holder">
-                <a id="select-country-dropdown" className="select-country-dropdown" 
-                onClick={this.ToggleCountryDropdown}>
-                    <i className="fas fa-map-marker-alt"></i>
-                    {this.state.current_selected_country}
-                    <i className="fas fa-caret-down fa-lg"></i>
-                </a>
-                <div id="country-dropdown-content" className="country-dropdown-content">
-                    <div className="content-holder">
-                        {this.state.render_country_options}
+                <div className="under-991px-cover">
+                    <div className="under-991px-country-title">
+                        <p>Country</p>
                     </div>
+                    
+                    <div className="under-991px-dropdown-cover">
+                        <a id="select-country-dropdown" className="select-country-dropdown" 
+                        onClick={this.ToggleCountryDropdown}>
+                            <i className="fas fa-map-marker-alt"></i>
+                            {this.state.current_selected_country}
+                            <i className="fas fa-caret-down fa-lg"></i>
+                        </a>
+                        <div id="country-dropdown-content" className="country-dropdown-content">
+                            <div className="content-holder">
+                                {this.state.render_country_options}
+                            </div>
+                        </div>
+                    </div>
+                    
                 </div>
             </div>
         )

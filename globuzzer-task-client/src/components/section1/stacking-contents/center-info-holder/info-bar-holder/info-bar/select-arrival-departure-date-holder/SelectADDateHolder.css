@@ -1,11 +1,58 @@
-.select-arrival-departure-date-holder{
-    display: flex;
-    flex-direction: row;
-    background-color: white;
-    width: 400px;
-    margin-left: 10px;
-    border-radius: 10px;
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 991px) {
+    .under-991px-ad-cover{
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .under-991px-ad-titles{
+        display: flex;
+    }
+
+    .under-991px-ad-titles p{
+        color:white;
+        margin: 0;
+        margin-bottom: 5px;
+    }
+
+    .under-991px-a{
+        width: 200px;
+    }
+
+    .under-991px-d{
+        width: 200px;
+    }
+    .select-arrival-departure-date-holder{
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        width: 400px;
+        border-radius: 10px;
+    }
+} 
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .under-991px-ad-titles{
+        display: none;
+    }
+
+    .select-arrival-departure-date-holder{
+        display: flex;
+        flex-direction: row;
+        background-color: white;
+        width: 400px;
+        margin-left: 10px;
+        border-radius: 10px;
+    }
 }
+
+
+
+
 
 .select-arrival-departure-date-holder .fa-calendar-alt{
     margin-right: 15px;
@@ -18,11 +65,5 @@
 }
 
 
-.non-active-img-nav-bttn{
-    background-color: rgb(37, 36, 36, 0.7);
-}
 
-.active-img-nav-bttn{
-    background-color: rgba(212, 37, 75, 0.7);
-}
 
