@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
     
-    <meta name="viewport" content="width=1008, initial-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=1008, height=1200, initial-scale=1.0, user-scalable=no">
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/web-app-manifest/
@@ -26,9 +26,14 @@
 
 
     <title>React App</title>
+
+    
   </head>
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <script>
+        document.body.style.height = window.innerHeight + "px"
+    </script>
     <div id="root" style="height: 100%"></div>
     <!--
       This HTML file is a template.
@@ -41,4 +46,6 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
   </body>
+
+  
 </html>

@@ -14,7 +14,7 @@ class StackingContents extends Component{
 
     render(){
         return(
-            <div className="stacking-contents">
+            <div className="stacking-contents" id="stacking-contents">
                 <Header />
                 <div className = "first-section-holder">
                     <ImagesHolder image_index = {this.props.image_index}/>

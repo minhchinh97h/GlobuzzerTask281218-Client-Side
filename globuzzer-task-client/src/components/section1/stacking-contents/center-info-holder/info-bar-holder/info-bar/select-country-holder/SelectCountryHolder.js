@@ -56,7 +56,7 @@ class SelectCountryHolder extends Component{
                     <div className="under-991px-dropdown-cover">
                         <a id="select-country-dropdown" className="select-country-dropdown" 
                         onClick={this.ToggleCountryDropdown}>
-                            <i className="fas fa-map-marker-alt"></i>
+                            <i className="fas fa-map-marker-alt" ></i>
                             {this.state.current_selected_country}
                             <i className="fas fa-caret-down fa-lg"></i>
                         </a>
@@ -66,7 +66,6 @@ class SelectCountryHolder extends Component{
                             </div>
                         </div>
                     </div>
-                    
                 </div>
             </div>
         )
