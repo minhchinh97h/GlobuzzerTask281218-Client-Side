@@ -1,0 +1,37 @@
+.intro-ad-holder{
+    width: 100%;
+    height: 40%;
+    background-color: rgb(250, 235, 229);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: default;
+}
+
+.advertisement{
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.advertisement span{
+    width: 160px;
+    text-align: left;
+    font-size: 16px;
+}
+
+.description{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.description span{
+    width: 65%;
+    text-align: left;
+    font-size: 18px;
+}
