@@ -24,3 +24,7 @@ This repository is created to hold the source code of the task requested by Glob
   - because I do not have the design for lower than 600px-width (mobile version), so currently the web page will not function properly
   when scaling the page lower than 600px horizontally.
   - needs to add more transitions and animations, also icons as well.
+  
+# Pictures of the web page:
+
+![image](https://user-images.githubusercontent.com/25637330/50737184-eab24e80-11ce-11e9-8d50-b9a7837ca651.png)
