@@ -84,7 +84,7 @@ class ArrivalDateHolder extends Component{
                     let cellText = document.createTextNode(date)
                     
                     
-                    if(date < today.getDate() && year === today.getFullYear() && month === today.getMonth() 
+                    if((date < today.getDate() && year === today.getFullYear() && month === today.getMonth()) 
                         || (month < today.getMonth() && year === today.getFullYear())
                         || (year < today.getFullYear()) ){
                         cell.classList.add("table-td-out-of-date")
@@ -126,11 +126,11 @@ class ArrivalDateHolder extends Component{
     render(){
         return(
             <div className="arrival-date-holder">
-                <a id="arrival-date-dropdown" className="arrival-date-dropdown"
+                <div id="arrival-date-dropdown" className="arrival-date-dropdown"
                 onClick={this.ToggleArrivalDropdown}>
                     <i className="far fa-calendar-alt"></i>
                     {this.state.current_date}
-                </a>
+                </div>
                 <div id="arrival-dropdown-content" className="arrival-dropdown-content">
                     <div className="content-holder">
                         <div className="current-month">

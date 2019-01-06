@@ -73,19 +73,19 @@ class ClientChooseCountryHolder extends Component{
                     <div className="destinations-holder">
                         <div className="portions" id="img-destination-holder">
                             <div className="destination sweden-destination">
-                                <img src={this.images[0]} id="sweden-img" className="active-img-destination"/>
+                                <img src={this.images[0]} id="sweden-img" className="active-img-destination" alt="sweden-img"/>
                             </div>
 
                             <div className="destination denmark-destination">
-                                <img src={this.images[1]} id="denmark-img"/>
+                                <img src={this.images[1]} id="denmark-img" alt="denmark-img"/>
                             </div>
 
                             <div className="destination finland-destination">
-                                <img src={this.images[2]} id="finland-img"/>
+                                <img src={this.images[2]} id="finland-img" alt="finland-img"/>
                             </div>
 
                             <div className="destination norway-destination">
-                                <img src={this.images[3]} id="norway-img"/>
+                                <img src={this.images[3]} id="norway-img" alt="norway-img"/>
                             </div>
                         </div>
                         
@@ -99,9 +99,9 @@ class ClientChooseCountryHolder extends Component{
 
                                 <div className="cover-block" >
                                     <div className="active-hover-choose-destination" id="sweden-choose-bttn">
-                                        <div className="choose-destination-bttn">
+                                        <a className="choose-destination-bttn" href="/Sweden">
                                             Choose
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -112,9 +112,9 @@ class ClientChooseCountryHolder extends Component{
 
                                 <div className="cover-block">
                                     <div className="non-active-hover-choose-destination" id="denmark-choose-bttn">
-                                        <div className="choose-destination-bttn">
+                                        <a className="choose-destination-bttn" href="/Denmark">
                                             Choose
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                                 
@@ -126,9 +126,9 @@ class ClientChooseCountryHolder extends Component{
 
                                 <div className="cover-block">
                                     <div className="non-active-hover-choose-destination" id="finland-choose-bttn">
-                                        <div className="choose-destination-bttn">
+                                        <a className="choose-destination-bttn" href="/Finland">
                                             Choose
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                                 
@@ -141,9 +141,9 @@ class ClientChooseCountryHolder extends Component{
 
                                 <div className="cover-block">
                                     <div className="non-active-hover-choose-destination" id="norway-choose-bttn">
-                                        <div className="choose-destination-bttn">
+                                        <a className="choose-destination-bttn" href="/Norway">
                                             Choose
-                                        </div>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

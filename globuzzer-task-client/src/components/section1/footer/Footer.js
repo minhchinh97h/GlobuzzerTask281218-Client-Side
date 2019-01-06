@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import {Link} from 'react-router-dom'
 import './Footer.css'
 
 class Footer extends Component {
@@ -9,16 +10,16 @@ class Footer extends Component {
                     <div className="left-section">
                         <div className="upper-left-section">
                             <div className="home-nav-link">
-                                <a href="#">Home</a>
+                                <Link to="/">Home</Link>
                             </div>
                             <div className="privacy-nav-link">
-                                <a href="#">Privacy</a>
+                                <Link to="/privacy">Privacy</Link>
                             </div>
                             <div className="terms-nav-link">
-                                <a href="#">Terms & Conditions</a>
+                                <Link to="/terms-and-conditions">Terms & Conditions</Link>
                             </div>  
                             <div className="contact-nav-link">
-                                <a href="#">Contact us</a>
+                                <Link to="/contact-us">Contact us</Link>
                             </div>
                         </div>
                         <div className="beneath-left-section">
@@ -31,13 +32,13 @@ class Footer extends Component {
 
                     <div className="right-section">
                         <div className="fb-holder">
-                            <a href="#"><i className="fab fa-facebook-f"></i></a>
+                            <a href="https://www.facebook.com/Globuzzer/"><i className="fab fa-facebook-f"></i></a>
                         </div>
                         <div className="twitter-holder">
-                            <a href="#"><i className="fab fa-twitter"></i></a>
+                            <a href="https://twitter.com/globuzzer?lang=en"><i className="fab fa-twitter"></i></a>
                         </div>
                         <div className="linkedin-holder">
-                            <a href="#"><i className="fab fa-linkedin-in"></i></a>
+                            <a href="https://www.linkedin.com/company/globuzzer/"><i className="fab fa-linkedin-in"></i></a>
                         </div>
                     </div>
                 </div>

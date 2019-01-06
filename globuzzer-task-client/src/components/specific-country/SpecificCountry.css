@@ -1,0 +1,152 @@
+.sweden-section{
+    height: 100%;
+    width: 100%;
+}
+
+.first-section-holder{
+    height: 100%;
+}
+
+.stacking-content{
+    height: calc(100% - 50px);
+    position: relative;
+}
+
+.image-holder{
+    position: absolute;
+    height: 100%;
+    width: 100%;
+}
+
+.image-holder img{
+    height: 70%;
+    width: 100%;
+    -webkit-filter: grayscale(30%);
+    filter: grayscale(30%);
+}
+
+.example-holder{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 30%;
+}
+
+.news-title{
+    height: 20%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.news-holder{
+    height: 80%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-areas:
+        "news1 news2 news3"
+}
+
+.news-holder .news-item{
+    display: flex;
+    align-items: center;
+    margin: 20px;
+    background-color: rgba(236, 221, 221, 0.445);
+}
+
+.news-holder .news-item p {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin: 10px;
+    text-align: left;
+}
+
+.news-holder .news-item:first-child{
+    grid-area: news1;
+
+}
+
+.news-holder .news-item:nth-child(2){
+    grid-area: news2;
+}
+
+.news-holder .news-item:last-child{
+    grid-area: news3;
+}
+
+
+
+.info-holder{
+    position: absolute;
+    height: 70%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.destination-banner{
+    font-size: 28px;
+    height: 30%;
+    color: white;
+}
+
+.destination-description{
+    height: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.destination-description span{
+    width: 50%;
+    text-align: justify;
+    color: white;
+    font-size: 18px;
+}
+
+.join-us-bttn-holder{
+    height: 30%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.join-us-bttn-holder button{
+    background-color: red;
+    border: 0;
+    width: 100px;
+    height: 30px;
+    border-radius: 25px;
+    color: white;
+}
+
+.video-holder{
+    height: 100%;
+    background-color: aliceblue;
+}
+
+.video-title{
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgb(29, 63, 95);
+}
+
+.video-display{
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.video-display iframe{
+    height: 80%;
+    width: 60%;
+}

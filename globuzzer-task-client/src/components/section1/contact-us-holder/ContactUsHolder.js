@@ -59,7 +59,7 @@ class ContactUsHolder extends Component{
 
                         <div className="map">
                             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8619.952373406051!2d18.06769312535121!3d59.34901039298875!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x465f9d401191830f%3A0xff6e8bbbca445e6b!2sLindstedtsv%C3%A4gen+24%2C+114+28+Stockholm%2C+Sweden!5e0!3m2!1sen!2s!4v1546681314413" 
-                            width="600" height="450" frameBorder="0" allowFullScreen></iframe>
+                            width="600" height="450" frameBorder="0" allowFullScreen title="map"></iframe>
                         </div>  
 
                         <div className="contact-info">
