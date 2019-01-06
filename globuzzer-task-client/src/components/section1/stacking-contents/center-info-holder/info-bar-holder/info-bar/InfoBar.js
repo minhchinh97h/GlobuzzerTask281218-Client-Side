@@ -9,10 +9,14 @@ class InfoBar extends Component{
     render(){
         return(
             <div className="info-bar">
+
+                {/* select country dropdowns */}
                 <SelectCountryHolder />
 
+                {/* arrival and departure calendars */}
                 <SelectADDateHolder />
 
+                {/* number of travelers input */}
                 <NumberGuestsHolder />
                 
             </div>

@@ -31,6 +31,7 @@ class SpecificCountry extends Component{
     componentDidMount(){
         this._mounted = true
 
+        //make a GET request to the endpoint api to retrieve the current country's info
         let getCountryInfo = async () => {
             await axios({
                 method: 'get',

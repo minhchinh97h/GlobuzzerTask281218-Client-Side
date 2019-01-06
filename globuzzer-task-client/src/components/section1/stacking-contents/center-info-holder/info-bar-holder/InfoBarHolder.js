@@ -9,8 +9,13 @@ class InfoBarHolder extends Component{
         return(
             <div className="info-bar-holder">
                 <div className="info-bar-cover">
+
+                    {/* hold the titles for 4 bars: country, arrival, departure, guests */}
                     <Titles />
+
+                    {/* the actual dropdowns and input */}
                     <InfoBar />
+                    
                     <button type="button" className="discover-bttn">
                         Discover
                     </button>

@@ -10,6 +10,7 @@ class ClientChooseCountryHolder extends Component{
         
     }
 
+    //when the user hovers on any image, this function will be fired
     ActiveImg = (id, bttnId, index) => {
         let imgNode = document.getElementById(id)
 
@@ -48,6 +49,7 @@ class ClientChooseCountryHolder extends Component{
         }
     }
 
+    //default get all the images black border
     BlackenBorderLineImages = () => {
         let imgNodes = document.getElementById("img-destination-holder")
 
