@@ -25,6 +25,16 @@ This repository is created to hold the source code of the task requested by Glob
   when scaling the page lower than 600px horizontally.
   - needs to add more transitions and animations, also icons as well.
   
-# Pictures of the web page:
+# Some pictures of the web page (upper than 992px):
 
 ![image](https://user-images.githubusercontent.com/25637330/50737184-eab24e80-11ce-11e9-8d50-b9a7837ca651.png)
+
+![image](https://user-images.githubusercontent.com/25637330/50737197-0fa6c180-11cf-11e9-8345-9f2b6783cbc2.png)
+
+![image](https://user-images.githubusercontent.com/25637330/50737236-6f9d6800-11cf-11e9-8f03-33bcb5a9646f.png)
+
+# Some pictures of the web page (min-width 600px to max-width 991px):
+
+![image](https://user-images.githubusercontent.com/25637330/50737254-a3788d80-11cf-11e9-8c20-e3be71a01ca5.png)
+
+![image](https://user-images.githubusercontent.com/25637330/50737272-c145f280-11cf-11e9-9796-537fb9126f4f.png)
